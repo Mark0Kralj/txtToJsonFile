@@ -4,9 +4,10 @@ using System.Text.Json;
 using MarkoTestProject;
 
 
-//File Path - you can change this to your file path
+//File Path - you can change this to your file path 
 string textFile = @"C:\POS\20210806.txt";
-
+//Path to folder where you put your JSON files - you can change this to your path
+string pathToFolder = @"C:\JSON\";
 
 
 //header
@@ -39,12 +40,7 @@ int lenghtColor = 17;
 int indexReference = 61;
 int lenghtReference = 30;
 
-
-
-//Path to folder where you put your JSON files - you can change this to your path
-string pathToFolder = @"C:\JSON\";
-
-string stringJson = "";
+string  jsonString= "";
 string filePathCreation = "";
 string orderJsonFileName = "";
 int lineCount =0;
@@ -121,7 +117,7 @@ for (var i = 0; i < numberOfOrders; i++)
 
 
     //Convert TXT to JSON
-    stringJson = JsonSerializer.Serialize(newOrder);
+    jsonString = JsonSerializer.Serialize(newOrder);
 
     //Creat JSON file
     FileStream fs = File.Create(filePathCreation);
@@ -130,7 +126,7 @@ for (var i = 0; i < numberOfOrders; i++)
 
     //Write to JSON file
     writer = new StreamWriter(filePathCreation, true);
-    writer.WriteLine(stringJson);
+    writer.WriteLine(jsonString);
     writer.Close();
 
     //Check line count 
