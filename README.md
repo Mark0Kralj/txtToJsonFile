@@ -1,6 +1,6 @@
-MarkoTestProject for Petter
+MarkoTestProject
 
-Hello Petter,
+Hello ,
 
 textFile - is  path to your .txt file on your PC
 
